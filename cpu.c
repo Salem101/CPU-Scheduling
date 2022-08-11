@@ -14,7 +14,7 @@
 //NULLPCB[PID:0, AT:0, TBT:0, EST:0, EET:0, RBT:0, Priority:0]
 
 
-struct PCB NULLPCB(){
+struct NULLPCB(PCB){
         process_id =0;
         arrival_timestamp=0;
         total_bursttime=0;
