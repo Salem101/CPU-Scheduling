@@ -14,6 +14,16 @@
 //NULLPCB[PID:0, AT:0, TBT:0, EST:0, EET:0, RBT:0, Priority:0]
 
 
+struct PCB NULLPCB(){
+        process_id =0;
+        arrival_timestamp=0;
+        total_bursttime=0;
+        execution_starttime=0;
+        execution_endtime=0;
+        remaining_bursttime=0;
+        process_priority=0;
+
+};
 struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp)
 {
     /*If no current running process (current process is nullpcb
