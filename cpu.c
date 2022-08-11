@@ -8,8 +8,8 @@
 #define TABLEMAX 10
 #define POOLMAX 10
 #define REFERENCEMAX 20
-#define MAX(a,b) ((a>b)?a:b)
-#define MIN(a,b) ((a>b)?b:a)
+//#define MAX(a,b) ((a>b)?a:b)
+//#define MIN(a,b) ((a>b)?b:a)
 
 //NULLPCB[PID:0, AT:0, TBT:0, EST:0, EET:0, RBT:0, Priority:0]
 
