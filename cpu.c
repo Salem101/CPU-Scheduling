@@ -34,7 +34,6 @@ struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queu
         new_process.remaining_bursttime = new_process.total_bursttime;
         return new_process;
     }
-    //if theres current process... compare and check which priority is higher
 
     else if(new_process.process_priority>=current_process.process_priority)
     {
@@ -80,4 +79,4 @@ struct PCB handle_process_completion_rr(struct PCB ready_queue[QUEUEMAX], int *q
 
 };
 
-#endif // CPU_OSLABS_H
+//#endif // CPU_OSLABS_H
