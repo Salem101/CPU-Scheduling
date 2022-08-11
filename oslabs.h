@@ -1,3 +1,4 @@
+#include "oslabs.h"
 #define QUEUEMAX 10
 #define MAPMAX 10
 #define TABLEMAX 10
