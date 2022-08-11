@@ -27,7 +27,13 @@ struct NULLPCB(){
 */
 struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp)
 {
-    if(current_process.process_id == 0)
+    if((current_process.process_id == 0)&&
+       (current_process.arrival_timestamp==0)&&
+       (current_process.total_bursttime==0)&&
+       (current_process.execution_starttime==0)&&
+       (current_process.execution_endtime==0)&&
+       (current_process.remaining_bursttime==0)&&
+       (current_process.process_priority==0))
     {
         new_process.execution_starttime= timestamp;
         new_process.execution_endtime=timestamp + new_process.total_bursttime;
