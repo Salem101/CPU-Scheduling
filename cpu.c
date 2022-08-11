@@ -45,14 +45,14 @@ struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queu
     {
         if(PCB.process_priority>=new_process.process_priority)
         {
-            ready_queue.insert(new_process);
+            ready_queue->new_process);
             new_process.execution_starttime =0;
             new_process.execution_endtime=0;
             new_process.remaining_bursttime = new_process.total_bursttime;
         }
         if(PCB.process_priority>new_process)
         {
-            ready_queue.insert(current_process);
+            ready_queue->current_process; 
             current_process.execution_starttime= timestamp;
             current_process.execution_endtime=timestamp + PCB.total_bursttime;
             PCB.remaining_bursttime = PCB.total_bursttime;
