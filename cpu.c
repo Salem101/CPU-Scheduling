@@ -1,9 +1,6 @@
 //Rivka Salem 8/22
 #include "oslabs.h"
 
-//#define MAX(a,b) ((a>b)?a:b)
-//#define MIN(a,b) ((a>b)?b:a)
-
 //NULLPCB[PID:0, AT:0, TBT:0, EST:0, EET:0, RBT:0, Priority:0]
 
 /*
@@ -60,22 +57,23 @@ struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queu
 
 struct PCB handle_process_completion_pp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, int timestamp)
 {
-        return 1; 
-}
+    return new_process;
+};
 struct PCB handle_process_arrival_srtp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int time_stamp)
 {
-        return 1; 
-}
+    return new_process;
+};
 struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, int timestamp)
 {
-        return 1; 
-}
+    return new_process;
+};
 struct PCB handle_process_arrival_rr(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp, int time_quantum)
 {
-        return 1; 
-}
+    return new_process;
+};
 struct PCB handle_process_completion_rr(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, int timestamp, int time_quantum)
 {
-        return 1; 
-}
+    return new_process; 
+};
 
+#endif // CPU_OSLABS_H
