@@ -1,13 +1,6 @@
 //Rivka Salem 8/22
 #include "oslabs.h"
 
-#ifndef CPU_OSLABS_H
-#define CPU_OSLABS_h
-#define QUEUEMAX 10
-#define MAPMAX 10
-#define TABLEMAX 10
-#define POOLMAX 10
-#define REFERENCEMAX 20
 //#define MAX(a,b) ((a>b)?a:b)
 //#define MIN(a,b) ((a>b)?b:a)
 
@@ -67,23 +60,22 @@ struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queu
 
 struct PCB handle_process_completion_pp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, int timestamp)
 {
-
-};
+        return 1; 
+}
 struct PCB handle_process_arrival_srtp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int time_stamp)
 {
-
-};
+        return 1; 
+}
 struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, int timestamp)
 {
-
-};
+        return 1; 
+}
 struct PCB handle_process_arrival_rr(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp, int time_quantum)
 {
-
-};
+        return 1; 
+}
 struct PCB handle_process_completion_rr(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, int timestamp, int time_quantum)
 {
+        return 1; 
+}
 
-};
-
-#endif // CPU_OSLABS_H
