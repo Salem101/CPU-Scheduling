@@ -156,7 +156,7 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
         ready_queue[0].remaining_bursttime = 0;
         ready_queue[0].process_priority = 0;
     }
-    else if(queue_cnt>1){
+    else if(*queue_cnt>1){
         ready_queue[temp_queue] = ready_queue[*queue_cnt - 1];
         *queue_cnt = *queue_cnt - 1;
         next_process.execution_starttime = timestamp;
@@ -183,7 +183,7 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
         }
 
 }
-}
+
 struct PCB handle_process_arrival_rr(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp, int time_quantum)
 {
     if ((current_process.process_id == 0)&&
