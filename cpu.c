@@ -12,7 +12,6 @@ struct NULLPCB(){
         execution_endtime=0;
         remaining_bursttime=0;
         process_priority=0;
-
 };
 */
 struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp)
@@ -46,9 +45,8 @@ struct PCB handle_process_arrival_pp(struct PCB ready_queue[QUEUEMAX], int *queu
     {
         new_process.execution_starttime= timestamp;
         new_process.execution_endtime=timestamp + new_process.total_bursttime;
-        new_process.remaining_bursttime = new_process.total_bursttime;
+        new_process.remaining_bursttime = current_process.execution_endtime - timestamp;
         current_process.execution_endtime=0;
-        current_process.remaining_bursttime=current_process.remaining_bursttime-1;
         ready_queue[*queue_cnt]=current_process;
         (*queue_cnt)++;
         return new_process;
@@ -75,4 +73,3 @@ struct PCB handle_process_completion_rr(struct PCB ready_queue[QUEUEMAX], int *q
 {
    return NULL;
 }
-
