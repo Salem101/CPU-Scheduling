@@ -145,7 +145,7 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
             temp_queue = i;
             }
         }
-    
+
         next_process = ready_queue[temp_queue];
     if (*queue_cnt == 1) {
         ready_queue[0].process_id = 0;
@@ -156,7 +156,13 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
         ready_queue[0].remaining_bursttime = 0;
         ready_queue[0].process_priority = 0;
     }
-    else if{
+    else if(queue_cnt>1){
+        ready_queue[temp_queue] = ready_queue[*queue_cnt - 1];
+        *queue_cnt = *queue_cnt - 1;
+        next_process.execution_starttime = timestamp;
+        next_process.execution_endtime = timestamp + next_process.remaining_bursttime;
+        return next_process;
+    }
         ready_queue[temp_queue] = ready_queue[*queue_cnt - 1];
         *queue_cnt = *queue_cnt - 1;
         next_process.execution_starttime = timestamp;
