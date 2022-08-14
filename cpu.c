@@ -96,7 +96,7 @@ struct PCB handle_process_completion_pp(struct PCB ready_queue[QUEUEMAX], int *q
         return null_PCB;
     }
     }
-}
+
 struct PCB handle_process_arrival_srtp(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int time_stamp)
 {
     if((current_process.process_id == 0)&&
@@ -143,9 +143,9 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
             if (r_bt > ready_queue[i].remaining_bursttime){ //Find smallest bt
             r_bt = ready_queue[i].remaining_bursttime;
             temp_queue = i;
+            }
         }
-        }
-    }
+    
         next_process = ready_queue[temp_queue];
     if (*queue_cnt == 1) {
         ready_queue[0].process_id = 0;
@@ -156,7 +156,7 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
         ready_queue[0].remaining_bursttime = 0;
         ready_queue[0].process_priority = 0;
     }
-    else {
+    else if{
         ready_queue[temp_queue] = ready_queue[*queue_cnt - 1];
         *queue_cnt = *queue_cnt - 1;
         next_process.execution_starttime = timestamp;
@@ -176,6 +176,7 @@ struct PCB handle_process_completion_srtp(struct PCB ready_queue[QUEUEMAX], int 
 
         }
 
+}
 }
 struct PCB handle_process_arrival_rr(struct PCB ready_queue[QUEUEMAX], int *queue_cnt, struct PCB current_process, struct PCB new_process, int timestamp, int time_quantum)
 {
