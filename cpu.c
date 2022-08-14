@@ -83,6 +83,7 @@ struct PCB handle_process_completion_pp(struct PCB ready_queue[QUEUEMAX], int *q
         next_process.execution_endtime = timestamp + next_process.total_bursttime;
         return next_process;
     }
+   }
     else {
         struct PCB null_PCB;
         null_PCB.process_id = 0;
